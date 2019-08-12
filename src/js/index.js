@@ -1,50 +1,48 @@
-
 $(function(){
 
+var btns = $('.button');
 
-var min = $('.button__minus');
-var max = $('.button__plus');
-	
+var rows = $('.form__size');
+
 var counterPlace = $('.counter-place');
-var counter = 0;
+var quantityPlace = $('.counter-place__quantity');
 
-max.on('click', function(e){
-	var target = $(e.target);
-	var inputValue = +target.prev().attr('value');	
-
-	inputValue += 1;	
-	target.prev().attr('value', inputValue);
-	if(inputValue){
-		counter++;
-		counterPlace.text(counter);
-	};
-	
-});
-
-min.on('click', function(e){
-	var target = $(e.target);
-	var inputValue = +target.next().attr('value');	
-	inputValue -= 1;
-	if(inputValue < 0) inputValue = 0;
-	target.next().attr('value', inputValue);
-	if(inputValue){
-		
-		counter--;
-		counterPlace.text(counter);
-	}else if(counter == 0 && inputValue == 0){
-			
-	}else{
-			counter --;
-			counterPlace.text(counter);
-		
+function computeTotal(){
+	var totalCounter = 0;
+	var totalQuantity = 0;
+	for( var i = 0; i < rows.length; i++ ){
+		var current = $(rows[i]);
+		var price = parseFloat( current.find('.form__money').text() );
+		var count = parseFloat( current.find('.input').attr('value') );
+		totalCounter += price * count;
+		totalQuantity += count;
 	}
 
+	counterPlace.text( totalCounter );
+	quantityPlace.text( totalQuantity );
+}
+
+computeTotal();
+
+btns.on('click', function(e){
+	var target = $( e.target );
+	var typeOfButton = ( target.hasClass('button__plus') ) ? '+' : '-' ;
+
 	
-	
+	var input = target.parents('.form__size').find('.input');
+	var inputValue = +input.attr('value');
+	if( typeOfButton === '+' ){
+		inputValue += 1;
+	} else {
+		inputValue -= 1;
+		inputValue = ( inputValue < 0 ) ? 0 : inputValue;
+	}
+	input.attr('value', inputValue);
+
+	computeTotal();
+
 });
 
-
-	
 
 
 
