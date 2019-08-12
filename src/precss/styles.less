@@ -1,0 +1,217 @@
+@import 'libs/smart-grid.less';
+@import 'libs/vars.less';
+@import 'libs/mixins.less';
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Montserrat', 'Arial', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 21px;
+	color: #000;
+}
+
+/* Global classes */
+
+.wrapper{
+	.wrapper();
+}
+
+.row{
+	.row-flex();
+}
+
+.clearfix:before,
+.clearfix:after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.clear{
+	clear: both;
+}
+
+.visually-hidden{
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	margin-top: -1px;
+	margin-left: -1px;
+	position: absolute;
+	clip: rect(0,0,0,0);
+	border: none;
+}
+
+img, svg{
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+/* Atomic classes */
+
+.d-n{
+	display: none;
+}
+
+.d-b{
+	display: block;
+}
+
+/* General */
+
+
+.form{
+	height: 350px;
+	width: 500px;
+	&__headers{
+		display:flex;
+		justify-content:space-between;
+		.col();
+		.size(12);
+	}
+	&__size{
+		display:flex;
+		justify-content:space-between;
+		margin-bottom: 10px;
+		
+		
+
+	}
+	&__div{
+		margin-left: -10px;
+	}
+	
+	&__h{
+		text-align:center;
+		color: #666;
+	    font-size: 12px;
+	    line-height: 20px;
+	    margin-bottom: 10px;  
+	}
+
+	
+
+	&__size_p{
+		color: #666;
+	    font-size: 12px;
+	    line-height: 20px;
+	    text-align:center;
+
+	}
+
+	&__stock_p{
+		color: #666;
+	    font-size: 12px;
+	    line-height: 20px;
+	    text-align: right;
+	    width: 90px;
+	    margin-bottom: 10px;
+	    text-align:center;
+	   
+	}
+	
+}
+
+
+.input{
+	width: 30px;
+	height: 30px;
+	text-align:center;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+.button{
+	text-align:center;
+	background-color:transparent;
+	border:none;
+	font-size:30px;
+	cursor:pointer;
+
+	
+
+	&__minus{
+		margin-top: -2px;
+	}
+	
+}
+.label{
+	display:flex;
+	justify-content:center;
+	align-content:space-between;
+	
+
+
+	
+}
+
+
+
+
+
+.form__btn{
+	width: 150px;
+	height: 39px;
+	background-color: #E62538;
+	    color: white;
+	display:inline-block;
+	margin: 0 50%; 
+	transform: translate(-50%);
+	border:none;
+	border-radius:4px;
+	    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/**/
