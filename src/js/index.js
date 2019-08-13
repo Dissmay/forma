@@ -2,7 +2,7 @@ $(function(){
 
 var btns = $('.button');
 
- 
+  var rows = $('.form');
 
 var counterPlace = $('.counter-place');
 var quantityPlace = $('.counter-place__quantity');
