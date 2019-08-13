@@ -28,7 +28,6 @@ btns.on('click', function(e){
 	var target = $( e.target );
 	var typeOfButton = ( target.hasClass('button__plus') ) ? '+' : '-' ;
 
-	
 	var input = target.parents('.form__size').find('.input');
 	var inputValue = +input.attr('value');
 	if( typeOfButton === '+' ){
@@ -44,6 +43,18 @@ btns.on('click', function(e){
 });
 
 
+
+function lol(){
+	var form = $('form');
+form.on('submit', function(e){
+	e.preventDefault();
+	var dataForm = $('.form').serializeArray();
+	$.post('http://localhost:8080/func.php',dataForm, function(response){
+		console.log(response)
+	})
+}); 
+}
+ 
 
 
 
