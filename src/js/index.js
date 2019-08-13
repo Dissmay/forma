@@ -49,7 +49,7 @@ form.on('submit', function(e){
 	e.preventDefault();
 	var dataForm = $('.form').serializeArray();
 	$.post('http://1512526.dissmay.web.hosting-test.net/decorazz/func.php',dataForm, function(response){
-		console.log(dataForm)
+		console.log(jQuery.getJSON(dataForm))
 	})
 }); 
 
