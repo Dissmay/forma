@@ -2,7 +2,7 @@ $(function(){
 
 var btns = $('.button');
 
-var rows = $('.form__size');
+ 
 
 var counterPlace = $('.counter-place');
 var quantityPlace = $('.counter-place__quantity');
@@ -44,19 +44,21 @@ btns.on('click', function(e){
 
 
 
-	var form = $('.form');
-form.on('submit', function(e){
-	e.preventDefault();
-	var dataForm = $('.form').serializeArray();
-	$.post('http://1512526.dissmay.web.hosting-test.net/decorazz/func.php',dataForm, function(response){
-		console.log(jQuery.getJSON(response))
-	})
-}); 
 
 	
 
 
-
+$.ajax({
+    type: "POST",
+    url: "http://1512526.dissmay.web.hosting-test.net/decorazz/func.php",
+    data: JSON.stringify( $('.form').serializeArray() ),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function(response){console.log(response);},
+    error: function(errMsg) {
+        console.log(errMsg);
+    }
+});
 
 
 });
