@@ -44,7 +44,6 @@ btns.on('click', function(e){
 
 
 
-function lol(){
 	var form = $('.form');
 form.on('submit', function(e){
 	e.preventDefault();
@@ -53,8 +52,7 @@ form.on('submit', function(e){
 		console.log(response)
 	})
 }); 
-}
- 
+
 
 
 
