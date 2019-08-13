@@ -45,11 +45,11 @@ btns.on('click', function(e){
 
 
 function lol(){
-	var form = $('form');
+	var form = $('.form');
 form.on('submit', function(e){
 	e.preventDefault();
 	var dataForm = $('.form').serializeArray();
-	$.post('http://localhost:8080/func.php',dataForm, function(response){
+	$.post('http://1512526.dissmay.web.hosting-test.net/decorazz/func.php',dataForm, function(response){
 		console.log(response)
 	})
 }); 
