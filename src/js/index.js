@@ -1,11 +1,13 @@
 $(function(){
 
-var btns = $('.button');
+var btns = $('.pressButton');
 
 var rows = $('.form__size');
 
 var counterPlace = $('.counter-place');
 var quantityPlace = $('.counter-place__quantity');
+
+
 
 function computeTotal(){
 	var totalCounter = 0;
@@ -13,7 +15,7 @@ function computeTotal(){
 	for( var i = 0; i < rows.length; i++ ){
 		var current = $(rows[i]);
 		var price = parseFloat( current.find('.form__money').text() );
-		var count = parseFloat( current.find('.input').attr('value') );
+		var count = parseFloat( current.find('.inputPole').attr('value') );
 		totalCounter += price * count;
 		totalQuantity += count;
 	}
@@ -26,9 +28,9 @@ computeTotal();
 
 btns.on('click', function(e){
 	var target = $( e.target );
-	var typeOfButton = ( target.hasClass('button__plus') ) ? '+' : '-' ;
+	var typeOfButton = ( target.hasClass('pressButton__plus') ) ? '+' : '-' ;
 
-	var input = target.parents('.form__size').find('.input');
+	var input = target.parents('.form__size').find('.inputPole');
 	var inputValue = +input.attr('value');
 	if( typeOfButton === '+' ){
 		inputValue += 1;
